@@ -222,6 +222,7 @@ h2
 .nav-item ul li a:hover
 {
   background-color: #006576;
+  border-radius: 13px;
 }
 
 .nav-item ul li span
