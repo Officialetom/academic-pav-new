@@ -711,7 +711,7 @@ h2
 
 .services-container
 {
-  width: 90%;
+  width: 83%;
   margin: auto;
 }
 
@@ -774,7 +774,7 @@ h2
 
 .updates .updates-container
 {
-  width: 90%;
+  width: 83%;
   margin: auto;
 }
 
@@ -931,7 +931,7 @@ h2
 
 .pricing .pricing-container
 {
-  width: 90%;
+  width: 83%;
   margin: auto;
 }
 
@@ -1032,7 +1032,7 @@ h2
 /* ------------------ vision section ------------------ */
 .vision-container .vision-item .vision-inner
 {
-  width: 90%;
+  width: 83%;
   margin: auto;
   padding: 105px 35px;
   display: grid;
@@ -1569,7 +1569,7 @@ form button
 
 .faq-container
 {
-  width: 75%;
+  width: 83%;
   margin: auto;
 }
 
@@ -2297,7 +2297,6 @@ form button
   {
     grid-template-columns: 1fr;
   }
-
 
   .sign-uni-item:last-child
   {
