@@ -1,0 +1,19 @@
+<li className="link-center">
+                      <span onClick={handleClick}>
+                        Academia
+                        <img src={polygon} ref={imgRef} alt="navbar-polygon" />
+                      </span>
+                      <div className="drop-down" ref={dropdownRef}>
+                        <ul>
+                          <li>
+                            <Link to="/universities">Universities</Link>
+                          </li>
+                          <li>
+                            <Link to="/professors">Professors</Link>
+                          </li>
+                          <li>
+                            <Link to="/programs">Programs</Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
