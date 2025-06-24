@@ -46,7 +46,7 @@ function Footer() {
             <div className="footer-subscribe">
               <span>Sign up for Our Newsletter</span>
               <form action="#">
-                <input type="email" name="" id="" required />
+                <input type="email" placeholder="Email..." name="" id="" required />
                 <button type="submit">Submit</button>
               </form>
             </div>
