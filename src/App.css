@@ -2288,6 +2288,17 @@ form button
     grid-template-columns: 1fr;
   }
 
+  .sign-forgot-container
+  {
+    grid-template-columns: 1fr ;
+  }
+
+  .sign-guest-container
+  {
+    grid-template-columns: 1fr;
+  }
+
+
   .sign-uni-item:last-child
   {
     border-radius: 0px;
