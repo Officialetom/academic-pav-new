@@ -768,7 +768,7 @@ h2
 /* css for news and updates section */
 .updates
 {
-  padding: 85px 45px;
+  padding: 85px 0;
   background-color: #fcfcfc;
 }
 
@@ -926,7 +926,7 @@ h2
 /* ----------------- css for pricing section -------------- */
 .pricing
 {
-  padding: 65px 45px;
+  padding: 65px 0;
 }
 
 .pricing .pricing-container
