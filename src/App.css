@@ -647,14 +647,14 @@ h2
 
 .card-image
 {
-  height: 150px;
+  height: 100px;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .card-image img
 {
-  width: 70%;
+  width: 90px;
   object-position: center;
   object-fit: cover;
 }
@@ -662,7 +662,7 @@ h2
 .card-text
 {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 .card-text a
@@ -741,7 +741,7 @@ h2
 
 .services-container .service-item .serve img
 {
-  width: 40%;
+  width: 10px;
 }
 
 @media (max-width: 950px)
