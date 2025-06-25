@@ -14,6 +14,7 @@ import GuestSign from "./pages/GuestSign";
 import Otp from "./pages/otp";
 import ResetPass from "./pages/ResetPass";
 import ScrollTop from "./components/ScrollTop";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/reset" element={<ResetPass />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot" element={<ForgotPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
