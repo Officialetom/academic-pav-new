@@ -455,8 +455,8 @@ h2
 .banner-item:last-child
 {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .banner-item img
@@ -464,6 +464,7 @@ h2
   width: 415px;
   height: 380px;
   border-radius: 50%;
+  float: right;
 }
 
 .banner-container .banner-btns
@@ -562,8 +563,8 @@ h2
 .about-item:last-child
 {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .about-item img
