@@ -171,7 +171,8 @@ h2
 
 .nav-container
 {
-  width: 80%;
+  width: 83%;
+  max-width: 1200px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -429,6 +430,7 @@ h2
 .banner-container
 {
   width: 83%;
+  max-width: 1200px;
   margin: auto;
   padding-top: 105px;
   display: grid;
@@ -547,6 +549,7 @@ h2
 .about-container
 {
   width: 83%;
+  max-width: 1200px;
   margin: auto;
   padding: 75px 0;
   display: grid;
@@ -620,6 +623,7 @@ h2
 {
   width: 83%;
   margin: auto;
+  max-width: 1200px;
 }
 
 .featured-container p
@@ -714,6 +718,7 @@ h2
 {
   width: 83%;
   margin: auto;
+  max-width: 1200px;
 }
 
 .services-container .service-item h2
@@ -777,6 +782,7 @@ h2
 {
   width: 83%;
   margin: auto;
+  max-width: 1200px;
 }
 
 .updates-container .update-item h2
@@ -934,6 +940,7 @@ h2
 {
   width: 83%;
   margin: auto;
+  max-width: 1200px;
 }
 
 .pricing-container .pricing-item:last-child
@@ -1034,6 +1041,7 @@ h2
 .vision-container .vision-item .vision-inner
 {
   width: 83%;
+  max-width: 1200px;
   margin: auto;
   padding: 105px 35px;
   display: grid;
@@ -1103,6 +1111,7 @@ h2
   grid-template-columns: 1fr;
   gap: 10px;
   width: 90%;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -1216,6 +1225,7 @@ h2
 {
   width: 83%;
   margin: auto;
+  max-width: 1200px;
   /* display: flex;
   flex-direction: column;
   align-items: center; */
@@ -1396,6 +1406,7 @@ h2
 .page-banner-container
 {
   width: 83%;
+  max-width: 1200px;
   margin: auto;
   color: #ffffff;
   margin-top: 45px;
@@ -1443,6 +1454,7 @@ h2
 .contact-container
 {
   width: 83%;
+  max-width: 1200px;
   margin: auto;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -1572,6 +1584,7 @@ form button
 .faq-container
 {
   width: 83%;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -1672,6 +1685,7 @@ form button
 .university .university-container
 {
   width: 83%;
+  max-width: 1200px;
   margin: auto auto 45px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
