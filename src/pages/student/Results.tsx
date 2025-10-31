@@ -5,7 +5,7 @@ import "./styles/results.css";
 import Sidebar from "./components/Sidebar";
 import { useState } from "react";
 import jsPDF from "jspdf";
-import autoTable, { RowInput } from "jspdf-autotable";
+import autoTable from "jspdf-autotable";
 import logo from "../../assets/apl.png";
 import Navbar from "./components/Navbar";
 
@@ -277,3 +277,4 @@ function Results() {
 }
 
 export default Results;
+
