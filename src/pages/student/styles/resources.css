@@ -113,7 +113,7 @@ button
         }
 
         .resource-inner{
-            display: grid;
+            /* display: grid; */
 
             .resource-label {
                 display: flex;
@@ -154,4 +154,5 @@ button
             grid-template-columns: 1fr;
         }
     }
+
 }
