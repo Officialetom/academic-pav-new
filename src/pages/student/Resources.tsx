@@ -224,7 +224,7 @@ function Resources() {
                         {post.author}
                       </span>
                     </div>
-                    <Link to="#" className="dash-btn">
+                    <Link to="#" className="dash-btn" style={{ width: "100%" }}>
                       {btntext}
                     </Link>
                   </div>
