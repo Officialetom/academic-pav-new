@@ -5,9 +5,17 @@ import "./styles/results.css";
 import Sidebar from "./components/Sidebar";
 import { useState } from "react";
 import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
+import autoTable, { RowInput } from "jspdf-autotable";
 import logo from "../../assets/apl.png";
 import Navbar from "./components/Navbar";
+
+declare module "jspdf" {
+  interface jsPDF {
+    lastAutoTable?: {
+      finalY: number;
+    };
+  }
+}
 
 function Results() {
   // tabs to filter grades on semester
@@ -106,7 +114,7 @@ function Results() {
     };
 
     // Group by Level and Semester
-    const grouped = {};
+    const grouped: any = {};
     visibleGrades.forEach((g) => {
       const level = getLevel(g.code);
       const semester = getSemester(g.code);
@@ -138,6 +146,7 @@ function Results() {
         const data = grouped[level][sem];
         if (data.length > 0) {
           doc.setFontSize(11);
+
           doc.text(
             sem,
             15,
@@ -146,7 +155,7 @@ function Results() {
           autoTable(doc, {
             startY: doc.lastAutoTable ? doc.lastAutoTable.finalY + 15 : 60,
             head: [["Course Title", "Code", "Score", "Grade"]],
-            body: data.map((g) => [g.title, g.code, g.score, g.grade]),
+            body: data.map((g: any) => [g.title, g.code, g.score, g.grade]),
             theme: "striped",
             headStyles: { fillColor: [41, 128, 185], halign: "center" },
             styles: { fontSize: 10 },
