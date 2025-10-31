@@ -1,4 +1,4 @@
-import logo from "../assets/logo-transparent.png";
+import logo from "../assets/apl.png";
 import toggleWhite from "../assets/toggle-w.png";
 import { Link } from "react-router-dom";
 import { useRef } from "react";

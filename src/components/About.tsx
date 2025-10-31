@@ -1,4 +1,4 @@
-import src from "../assets/logo-transparent.png";
+import src from "../assets/apl.png";
 import Button from "./Button";
 
 function About() {

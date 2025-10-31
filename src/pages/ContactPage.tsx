@@ -1,3 +1,4 @@
+import  "./style.css";
 import Footer from "../components/footer";
 import PageBanner from "../components/PageBanner";
 import twitter from "../assets/twitter.svg";

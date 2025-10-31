@@ -1,3 +1,4 @@
+import  "./style.css";
 import Faq from "../components/Faq";
 import Footer from "../components/footer";
 import PageBanner from "../components/PageBanner";

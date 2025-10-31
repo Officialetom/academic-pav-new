@@ -16,11 +16,7 @@ function Banner() {
             and Students.
           </p>
           <div className="banner-btns">
-            <Button
-              href="/signin"
-              name="Get Started"
-              class_name="button-light"
-            />
+            <Button href="/auth" name="Get Started" class_name="button-light" />
             <Button href="/about" name="Learn More" class_name="button-dark" />
             <img src={Arrow} alt="arrow_down" />
           </div>

@@ -1,0 +1,157 @@
+@import url("./student.css");
+
+button
+{
+    border: none;
+}
+
+.truncate{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+}
+
+.dash-btn-grey
+{
+    display: inline-block;
+    background-color: #e6e6e6;
+    color: var(--text-secondary);
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .5s ease;
+    outline: none;
+    margin-right: 5px;
+
+    &:hover
+    {
+        background-color: var(--primary-hover);
+        color:#fff;
+    }
+    &.activeTab{
+        background-color: var(--primary-hover);
+        color: #fff;
+    }
+}
+
+.resource-tabs
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* .r-tab
+    {
+        display: flex;
+        align-items: center;
+    } */
+
+    .r-filter
+    {
+        display: flex;
+        align-items: center;
+
+        input{
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: var(--text-primary);
+            font-family: "Inter", sans-serif;
+            margin-right: 5px;
+            box-shadow: 1px 1px 1px rgba(0,0,0,.12);
+        }
+
+        .filter-icon
+        {
+            background-color: #d3d3d3;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        &{
+            flex-direction: column;
+
+            .r-tab
+            {
+                margin-bottom: 10px;
+
+                button{margin-bottom: 10px}
+            }
+        }
+    }
+}
+
+
+.resource-content
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+    .resource-item
+    {
+        overflow: hidden;
+
+        .resource-image
+        {
+            height: 200px;
+            overflow: hidden;
+
+            img
+            {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .resource-inner{
+            display: grid;
+
+            .resource-label {
+                display: flex;
+    
+                span
+                {
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+                }
+            }
+
+            h3{font-size: 15px}
+
+            .resource-info
+            {
+                display: flex;
+                align-items: center;
+                span{
+                    color: var(--text-secondary);
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+        }
+        
+    }
+
+    @media (max-width: 950px) {
+        &{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (max-width: 700px) {
+        &{
+            grid-template-columns: 1fr;
+        }
+    }
+}

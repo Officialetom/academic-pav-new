@@ -1,4 +1,4 @@
-import Img from "../assets/logo-transparent.png";
+import Img from "../assets/apl.png";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -46,7 +46,13 @@ function Footer() {
             <div className="footer-subscribe">
               <span>Sign up for Our Newsletter</span>
               <form action="#">
-                <input type="email" placeholder="Email..." name="" id="" required />
+                <input
+                  type="email"
+                  placeholder="Email..."
+                  name=""
+                  id=""
+                  required
+                />
                 <button type="submit">Submit</button>
               </form>
             </div>

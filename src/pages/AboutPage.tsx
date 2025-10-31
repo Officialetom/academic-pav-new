@@ -1,8 +1,9 @@
+import "./style.css";
 import Footer from "../components/footer";
 import PageBanner from "../components/PageBanner";
 import Team from "../components/Team";
 import Vision from "../components/Vision";
-import src from "../assets/logo-transparent.png";
+import src from "../assets/apl.png";
 
 function AboutPage() {
   return (

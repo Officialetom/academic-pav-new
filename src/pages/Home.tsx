@@ -1,3 +1,4 @@
+import "./style.css";
 import About from "../components/About";
 import Banner from "../components/Banner";
 import Footer from "../components/footer";
