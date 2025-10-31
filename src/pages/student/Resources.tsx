@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/news-2.jpg";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons/faBookOpen";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 function Resources() {
   // array to hold tab
@@ -76,8 +77,13 @@ function Resources() {
     },
   ];
 
+  type Category =
+    | "Past Questions"
+    | "Video Tutorials"
+    | "Courses"
+    | "Nano Degrees";
   // fontAwesome icon category
-  const iconCategories = {
+  const iconCategories: Record<Category, IconDefinition> = {
     "Past Questions": faBook,
     "Video Tutorials": faVideoCamera,
     Courses: faBookOpen,
@@ -88,7 +94,7 @@ function Resources() {
   function timeAgo(dateString: string) {
     const inputDate = new Date(dateString);
     const now = new Date();
-    const difference = now - inputDate;
+    const difference = now.getTime() - inputDate.getTime();
     const seconds = Math.floor(difference / 1000);
 
     if (seconds < 5) return "just now";
@@ -191,8 +197,7 @@ function Resources() {
                         style={{ marginRight: "5px" }}
                       >
                         <FontAwesomeIcon
-                          icon={iconCategories[post.category]}
-                          style={{ marginRight: "5px" }}
+                          icon={iconCategories[post.category as Category]}
                         />
                         {post.category}
                       </span>
