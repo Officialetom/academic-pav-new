@@ -1,0 +1,77 @@
+@import url('./super.css');
+
+.requests{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 15px;
+
+    span{
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    svg{
+        margin-right: 6px;
+    }
+
+    .text-warning{
+        color: #f5b403;
+    }
+
+    .text-success{
+        color: #098b14;
+    }
+
+    .text-info{
+        color: #056cf3;
+    }
+
+}
+
+.reqs{
+    .bg-success{
+        background-color: #d0ffd3;
+        color: #098b14;
+        padding: 5px 10px;
+        border-radius: 30px;
+        font-size: 12px;
+    }
+    
+    .bg-danger{
+        background-color: #f8a8a8;
+        color: #8b0909;
+        padding: 5px 10px;
+        border-radius: 30px;
+        font-size: 12px;
+    }
+    
+    .bg-info{
+        background-color: #d4d4d4;
+        color: #4e4e4e;
+        padding: 5px 10px;
+        border-radius: 30px;
+        font-size: 12px;
+    }
+    
+    .bg-warning{
+        background-color: #f8e592;
+        color: #b98f05;
+        padding: 5px 10px;
+        border-radius: 30px;
+        font-size: 12px;
+    }
+
+    .r-actions{
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 16px;
+
+        svg{
+            cursor: pointer;
+        }
+    }
+
+}

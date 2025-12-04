@@ -1,0 +1,32 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./styles/super.css";
+import Sidebar from "./components/Sidebar";
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+
+function AdminDashboard() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const closeSidebar = () => setIsOpen(false);
+
+  return (
+    <div className="super-dashboard">
+      <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} page="dashboard" />
+      <div className="main-content">
+        {/* dashboard navbar area */}
+        <Navbar toggleSidebar={toggleSidebar} />
+        {/* dashboard main content area */}
+        <div className="content">
+          <div className="dash-intro mb-1">
+            <h3>Dashboard Overview</h3>
+            <p>Monitor and manage the entire university ecosystem</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default AdminDashboard;

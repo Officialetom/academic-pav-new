@@ -1,0 +1,71 @@
+@import url('./super.css');
+
+
+.permit{
+
+    .text-danger{
+        color: #c51515;
+    }
+
+    .text-success{
+        color: #098b14;
+    }
+    
+    .permission-title{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        h3{
+            font-size: 14px;
+        }
+
+        p{
+            font-size: 12px;
+        }
+
+        span{
+            font-size: 11px;
+        }
+
+        .permit-edit-box{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            svg{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .permissions{
+        border-top: 1px solid #e1e1e1;
+        h2{
+            font-size: 14px;
+        }
+
+        .permits
+        {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+
+            .permit-box
+            {
+                background-color: #F9FAFB;
+                border-radius: 5px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+
+                span{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,168 @@
+@import url('./super.css');
+
+.streams{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+
+    .dash-card{
+        .first, .second-inner{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .first{
+            font-size: 13px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .second{
+            display: grid;
+            gap: 2px;
+
+            .second-inner{
+                font-size: 12px;
+            }
+        }
+
+        .levels{
+            display: flex;
+            align-items: center;
+            height: 12px;
+            background-color: #e1e1e1;
+            border-radius: 20px;
+            overflow: hidden;
+
+            .level-bar{
+                height: 100%;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+
+/* ------------- stream class section ------------ */
+.stream-status{
+
+    .text-success{
+        color: #0a7c23;
+    }
+
+    .text-danger{
+        color: #b81212;
+    }
+
+    .text-warning{
+        color: #eea60a;
+    }
+
+    h2{
+        font-size: 14px;
+        font-weight:500;
+    }
+
+    .stream-data{
+        border-top: 1px solid #e1e1e1;
+        display: grid;
+        gap: 8px;
+
+        .stream-data-one{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .s-d-one{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .d-o-one{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 35px;
+                    width: 35px ;
+                    background-color: #EFF6FF;
+                    color: #000;
+                    padding: 5px;
+                    border-radius: 3px;
+                }
+
+                .d-o-two{
+                    p{
+                        font-size: 13px;
+                        font-weight: bold;
+                    }
+
+                    span{
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .s-d-two{
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                span{
+                    font-size: 13px;
+                }
+
+                .toggle-active
+                {
+                    width: 50px;
+                    height: 26px;
+                    border-radius: 30px;
+                    position: relative;
+                    cursor: pointer;
+                    transition: .3s;
+
+                    .toggle{
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        position: absolute;
+                        top: 1px;
+                        transition: .3s;
+                    }
+                }
+            }
+        }
+
+        .stream-data-two{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 15px;
+
+            .packets
+            {
+                background-color: #F9FAFB;
+                border-radius: 5px;
+                padding: 9px;
+
+                p{
+                    font-size: 11px;
+                }
+
+                h3{
+                    font-size: 13px;
+                }
+
+                &:last-child{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    a{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
