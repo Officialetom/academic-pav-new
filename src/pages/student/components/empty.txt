@@ -1,0 +1,44 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleRight,
+  faArrowRight,
+  faArrowTrendUp,
+  faBars,
+  faBell,
+  faBookAtlas,
+  faChartBar,
+  faGear,
+  faMedal,
+  faNewspaper,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import "./styles/student.css";
+import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
+import { useState } from "react";
+
+function Dashboard() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const closeSidebar = () => setIsOpen(false);
+
+  return (
+    <div className="student-dashboard">
+      <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} page="dashboard" />
+      <div className="main-content">
+        {/* dashboard navbar area */}
+        <Navbar toggleSidebar={toggleSidebar} />
+        {/* dashboard main content area */}
+        <div className="content">
+          <div className="dash-intro mb-1">
+            <h3>Dashboard</h3>
+            <p>View your academic progress and updates</p>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,227 @@
+@import "./student.module.css";
+
+.dash-intro{
+    p{
+        font-size: 13px;
+    }
+}
+.dash-overview
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+
+    .icon-display
+    {
+        border-radius: 5px;
+        padding: 15px;
+        place-content: center;
+        align-items: center;
+    }
+
+    .dash-card
+    {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        h4
+        {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 12px;
+        }
+
+        &:first-child .icon-display
+        {
+            background-color: #2563EB;
+        }
+        &:nth-child(2) .icon-display
+        {
+            background-color: #0d9488;
+        }
+        &:nth-child(3) .icon-display
+        {
+            background-color: #9333EA;
+        }
+        &:last-child .icon-display
+        {
+            background-color: #EA580C;
+        }
+
+        .card-link
+        {
+            a{
+                color:#0d9488;
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.f-icon-w
+{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.dash-featured
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+
+    .feature-card
+    {
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.1);
+
+        &:first-child{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feature-header
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h4, span
+            {
+                font-size: 14px;
+            }
+        }
+
+        .feature-content 
+        {
+            .grades
+            {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+    
+                h4{font-size: 13px}
+                p{font-size: 12.5px;}
+    
+                .grade
+                {
+                    width: 50px;
+                    height: 50px;
+                    place-content: center;
+                    text-align: center;
+                    border-radius: 50%;
+                    color: #ffffff;
+                }
+    
+                .grade-a{background-color: #0d9423;}
+                .grade-b{background-color: #3a4ad9;}
+                .grade-o{background-color: #f39c21;}
+                .grade-g{background-color: #797979;}
+                .grade-f{background-color: #f30505;}
+            }
+
+            .image
+            {
+                height: 120px;
+                align-items: center;
+                overflow: hidden;
+                text-align: center;
+                border-radius: 10px;
+
+                img
+                {
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            h3
+            {
+                font-size: 14px;
+                margin-top: 10px;
+            }
+
+            .text-truncate{
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-size: 13px;
+            }
+
+            .truncate{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 300px;
+            }
+            
+            .dash-news
+            {
+                span
+                {
+                    display: block;
+                    width: fit-content;
+                    font-size: 12px;
+                }
+
+                h3{
+                    font-size: 13px;
+                    font-weight: 600;
+                }
+
+                .time{
+                    color: var(--text-secondary);
+                    margin-top: 5px;
+                }
+            }
+
+        }
+
+        .feature-footer
+        {
+            a{
+                font-size: 13px;
+                color: #0d9488;
+                display: flex;
+                align-items: center;
+            }
+
+            .d-icon{
+                margin-left: 5px;
+            }
+        }
+
+        .f-flex
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .time{
+                color: var(--text-secondary);
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px)
+{
+    .dash-intro
+    {
+        p{
+            font-size: 12px;
+        }
+    }
+}
