@@ -1,0 +1,123 @@
+@import url("./student.module.css");
+
+.filter
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .selecting
+    {
+        background-color: #f1f1f1;
+        padding: 10px 20px;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 200px;
+
+        select{
+            padding: 5px;
+            font-family: "Inter", sans-serif;
+            border: none;
+            background-color: #f1f1f1;
+
+            option{
+                color:var(--text-primary);
+                border: none;
+                outline: none;
+                width: 100px;
+            }
+        }
+    }
+
+    .search
+    {
+        display: flex;
+        align-items: center;
+
+        input{
+            padding: 10px;
+            font-family: "Inter", sans-serif;
+            border: none;
+            border-bottom: 1px solid #f1f1f1;
+            background-color: #fafafa;
+        }
+
+        span
+        {
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            place-content: center;
+            text-align: center;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 600px){
+    .filter
+    {
+        flex-direction: column;
+
+        .selecting{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+.result-overview
+{
+    overflow-x: auto;
+
+    .result
+    {
+        min-width: 1110px;
+        width: 100%;
+        border-collapse: collapse;
+
+        th{
+            text-align: left;
+            background-color: #f9fafb;
+            padding: 15px 0;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        tr{
+            &:hover{
+                background-color: #f1f1f1;
+            }
+        }
+        
+        td{
+            /* padding: 22px 0; */
+            height: 73px;
+            font-size: 14px;
+        }
+
+        .grade
+        {
+            place-content: center;
+            text-align: center;
+            height: 50px;
+            width: 50px;
+            font-size: 13px;
+            border-radius: 50%;
+            color: #ffffff;
+            padding: 10px;
+        }
+
+        .grade-a{background-color: #0d9423;}
+        .grade-b{background-color: #3a4ad9;}
+        .grade-o{background-color: #f39c21;}
+        .grade-g{background-color: #797979;}
+        .grade-f{background-color: #f30505;}
+    }
+
+}

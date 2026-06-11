@@ -1,0 +1,294 @@
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --muted: #6B7280;
+  --accent: #1E3A8A;
+  --tab-blue: #3B82F6; /* active tab text + underline color */
+  --button-blue: #2563EB; /* edit button border/text color */
+  --radius: 10px;
+  --max-width: 1200px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* page wrapper */
+.settings-page-wrap {
+  background: var(--bg);
+  min-height: calc(100vh - 80px);
+  padding: 28px 24px;
+}
+
+/* header */
+.settings-header {
+  max-width: var(--max-width);
+  margin: 0 auto 12px;
+}
+.settings-title {
+  margin: 0;
+  font-size: 20px;
+  color: #0f172a;
+  font-weight: 600;
+}
+.settings-sub {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* MAIN white card that holds the tabs & content (as requested) */
+.settings-card {
+  max-width: var(--max-width);
+  margin: 12px auto;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid rgba(2, 6, 23, 0.04);
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.03);
+}
+
+/* tabs row */
+.settings-tabs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-left: 8px;
+  margin-bottom: 6px;
+}
+/* tab button: remove filled background behaviour; active shows underline + blue text */
+.tab {
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--muted);
+  font-weight: 600;
+  position: relative;
+  font-size: 13px;
+}
+.tab:focus { outline: 2px solid rgba(59,130,246,0.15); outline-offset: 2px; }
+.tab.active {
+  color: var(--tab-blue);
+}
+.tab.active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--tab-blue);
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+}
+
+/* content area spacing - increased to shift the heading downward a little */
+.tab-content {
+  margin-top: 20px; /* increased from previous value so title/sub sit lower under tabs */
+}
+
+/* headings */
+.section-title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #0f172a;
+  font-weight: 600;
+}
+.section-sub {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* schema grid: 3 columns (keeps all three cards in a single line) */
+.schema-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+/* each card */
+.schema-card {
+  background: transparent; /* card items themselves sit on white parent, but each item should show border lines inside */
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: none;
+  border: 1px solid rgba(2,6,23,0.04); /* visible border to differentiate items as requested */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 200px;
+}
+
+/* header row inside card */
+.schema-card-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.schema-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.schema-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+/* fields: each li separated by border line */
+.schema-fields {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.schema-fields li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 8px 4px;
+  border-bottom: 1px solid rgba(2,6,23,0.03);
+}
+.schema-fields li.field-last {
+  border-bottom: none;
+}
+.field-name {
+  color: #111827;
+}
+.field-type {
+  color: var(--muted);
+}
+
+/* Edit Schema button — full width, no background, blue border + text */
+.schema-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+.btn-outline.small.full-width {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--button-blue);
+  background: transparent;
+  color: var(--button-blue);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* system configuration: make the card background F9FAFB */
+.system-config {
+  margin-top: 22px;
+}
+.config-card {
+  background: #F9FAFB; /* requested background color */
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(2, 6, 23, 0.03);
+}
+.config-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.config-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.shield-icon {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 20px;
+  height: 20px;
+  color: #374151;
+}
+.config-heading {
+  font-weight: 600;
+}
+.config-sub {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+}
+.config-options {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* checkbox rows */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #111827;
+}
+.checkbox-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* save area bottom-right */
+.save-area {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px 0 40px;
+}
+.save-btn {
+  background: linear-gradient(180deg, #2563eb, #1e40af);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.12);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* placeholder */
+.placeholder-area {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(2,6,23,0.03);
+  box-shadow: 0 6px 20px rgba(17,24,39,0.03);
+}
+
+/* responsiveness */
+@media (max-width: 1100px) {
+  .schema-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .schema-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .settings-page-wrap {
+    padding: 18px;
+  }
+  .settings-tabs {
+    overflow-x: auto;
+    gap: 6px;
+  }
+  .save-area {
+    padding-bottom: 20px;
+  }
+}

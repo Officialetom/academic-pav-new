@@ -1,0 +1,200 @@
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --muted: #6B7280;
+  --radius: 10px;
+  /* default check color (green). components set --check-color inline to ensure green always used) */
+  --check-color: #10B981;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* wrapper */
+.permissions-wrap {
+  background: transparent;
+  padding: 12px 8px 28px;
+  max-width: 1200px;
+  margin: 6px auto;
+}
+
+/* heading */
+.permissions-heading {
+  margin: 6px 0 6px;
+  font-size: 18px;
+  color: #0f172a;
+  font-weight: 600;
+}
+.permissions-sub {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* more vertical spacing between cards so they don't touch */
+.permissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* increased vertical gap (space up/down) */
+}
+
+/* each card — slimmer height but better internal spacing */
+.perm-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 12px 14px;            /* slightly reduced top/bottom padding for slimmer look */
+  border: 1px solid rgba(2,6,23,0.04);
+  box-shadow: 0 6px 14px rgba(17,24,39,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  /* inline style provides --accent and --check-color */
+  --accent: #2563EB;
+  --accent-bg: transparent; /* we removed shield background per request */
+
+  min-height: 92px;  /* reduced minimum height */
+  max-height: 140px;
+}
+
+/* header */
+.perm-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* left side: shield + title */
+.perm-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* shield: no background - only stroke colored */
+.perm-shield {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius: 8px;
+  background: transparent; /* removed background */
+  flex: 0 0 34px;
+}
+.perm-shield svg { display:block; }
+.perm-shield svg path { stroke: var(--accent); }
+
+/* title & subtitle */
+.perm-title-wrap { display:flex; flex-direction:column; }
+.perm-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #0f172a;
+}
+.perm-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* edit link (neutral) */
+.perm-edit { display:flex; align-items:center; }
+.edit-link {
+  background: transparent;
+  border: none;
+  color: #2563EB;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.edit-link:focus { outline: 2px solid rgba(37,99,235,0.06) }
+
+/* chips grid: 4 columns x 2 rows; increase vertical row gap so top/bottom rows don't join */
+.perm-chips {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 44px;        /* slightly larger row height to ensure chips are separated (vertical spacing) */
+  gap: 18px 12px;              /* row-gap 18px (vertical), column-gap 12px (horizontal) */
+  align-items: center;
+}
+
+/* pill style: uniform background color provided by user */
+.perm-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1px 20px;        /* larger horizontal padding so chips appear longer */
+  border-radius: 10px;
+  background: #F0FDF4;      /* uniform pill background color (user-provided) */
+  border: 1px solid rgba(2,6,23,0.04);
+  min-height: 40px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #0f172a;           /* neutral text color */
+  justify-content: flex-start;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* placeholder slot keeps layout but visually minimal */
+.perm-chip--empty {
+  background: transparent;
+  border: 1px dashed rgba(2,6,23,0.03);
+  color: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* check icon badge inside the pill (good icon inside circle) */
+/* larger icon to match your image */
+.chip-badge {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  flex: 0 0 24px;
+}
+
+/* If you later want to use an external image, use .chip-img */
+.chip-img {
+  width:20px;
+  height:20px;
+  display:block;
+}
+
+/* chip text */
+.chip-text { overflow:hidden; text-overflow:ellipsis; }
+
+/* save button area */
+.permissions-save {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+/* Save Templates button */
+.save-templates-btn {
+  background: linear-gradient(180deg, #2563eb, #1e40af);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 8px 26px rgba(37,99,235,0.12);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .perm-chips { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 46px; }
+}
+
+@media (max-width: 720px) {
+  .perm-chips { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 48px; }
+  .perm-card { min-height: 110px; }
+}

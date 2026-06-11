@@ -1,0 +1,49 @@
+@import url('./super.css');
+
+.analytics-filter{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+
+    .a-filter{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        select{
+            background-color: transparent;
+            border-radius: 6px;
+            border: 1px solid #e1e1e1;
+            padding: 6px;
+            font-family: 'Poppins', sans-serif;
+        }
+    }
+
+    button{
+        background-color: #2563EB;
+        border-radius: 7px;
+        padding: 8px 10px;
+        color: #fff;
+        font-size: 13px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @media (max-width: 768px) {
+        &{
+            justify-content: start;
+        }
+    }
+}
+
+.analytics{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: 15px;
+    
+    h4{
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+}

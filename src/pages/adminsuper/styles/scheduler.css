@@ -1,0 +1,291 @@
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --muted: #6B7280;
+  --accent-blue: #2563EB;
+  --success: #10B981;
+  --radius: 10px;
+  --max-width: 1200px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* wrapper */
+.scheduler-wrap {
+  max-width: var(--max-width);
+  margin: 6px auto;
+  padding: 6px;
+}
+
+/* headings */
+.scheduler-title {
+  margin: 6px 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.scheduler-sub {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* list spacing */
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+/* card */
+.task-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 14px 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 18px rgba(17,24,39,0.03);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  transition: transform 150ms ease;
+}
+
+/* staggered shift for even cards */
+.task-card:nth-child(even) {
+  transform: translateX(18px);
+}
+
+/* grid: icon + content */
+.task-grid {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  column-gap: 4px; /* tight gap so icon and title are close */
+  row-gap: 8px;
+  align-items: center; /* title/icon on same line vertically */
+  min-width: 0;
+  flex: 1;
+}
+
+/* ICON */
+.task-icon {
+  grid-column: 1;
+  grid-row: 1;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 4px;
+}
+.task-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* TITLE — normal weight (not bold) unless you change it later */
+.task-title {
+  grid-column: 2;
+  grid-row: 1;
+  font-weight: 400;
+  color: #0f172a;
+  font-size: 14px;
+  line-height: 1.1;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-self: center;
+}
+
+/* description */
+.task-desc {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+  padding-top: 2px;
+}
+
+/* meta line (label/value pairs) */
+.task-meta {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  padding-top: 4px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* LABELS normal; VALUES light-bold (600) per request */
+.task-schedule-label,
+.task-next-label {
+  font-weight: 400; /* keep labels normal */
+  color: var(--muted);
+}
+
+.task-schedule-value,
+.task-next-value {
+  font-weight: 600; /* light-bold */
+  color: #111827;
+}
+
+/* small gap before next-run value */
+.task-next {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+/* right area */
+.task-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  min-width: 120px;
+}
+.task-edit {
+  background: transparent;
+  border: none;
+  color: #2563EB;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.task-edit:focus {
+  outline: 2px solid rgba(37,99,235,0.08);
+}
+
+/* status */
+.status-pill {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight:700;
+  font-size:12px;
+}
+.status-active {
+  background: rgba(16,185,129,0.12);
+  color: #059669;
+  border: 1px solid rgba(6,95,59,0.06);
+}
+.status-inactive {
+  background: rgba(156,163,175,0.06);
+  color: #374151;
+  border: 1px solid rgba(2,6,23,0.04);
+}
+
+/* config */
+.scheduler-config {
+  margin-top: 18px;
+  background: #F9FAFB;
+  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid rgba(2,6,23,0.03);
+  box-shadow: 0 6px 14px rgba(17,24,39,0.02);
+}
+
+.config-title {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+/* config grid */
+.config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+  align-items: start;
+}
+
+.config-field {
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.config-label {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.config-select,
+.config-input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(2,6,23,0.06);
+  background: #fff;
+  font-size: 13px;
+  color: #0f172a;
+  box-sizing: border-box;
+}
+
+/* checkboxes */
+.config-checkboxes {
+  margin-top: 14px;
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.checkbox-row {
+  display:flex;
+  gap: 10px;
+  align-items: center;
+  color: #111827;
+}
+.checkbox-row input[type="checkbox"] { width: 18px; height: 18px; }
+
+/* save */
+.scheduler-save-area {
+  display:flex;
+  justify-content:flex-end;
+  margin-top: 18px;
+}
+.scheduler-save-btn {
+  background: linear-gradient(180deg,#2563EB,#1E40AF);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(37,99,235,0.12);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .config-grid { grid-template-columns: 1fr; }
+  .task-card { flex-direction: column; align-items: stretch; transform: none; }
+  .task-right { flex-direction: row; justify-content: space-between; }
+  .task-grid { grid-template-columns: 36px 1fr; }
+  .task-card:nth-child(even) { transform: none; }
+}
+
+@media (max-width: 480px) {
+  .task-grid { grid-template-columns: 32px 1fr; column-gap: 6px; }
+  .task-icon { width: 32px; height: 32px; }
+  .task-icon-img { width: 18px; height: 18px; }
+  .task-title { font-size: 13px; }
+  .task-meta { font-size: 12px; }
+}
