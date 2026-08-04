@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+*{
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f1f1f1;
+    font-family:"Poppins",sans-serif;
+    /* overflow:hidden; */
+}
+
+th,
+
+td{
+    @apply px-4;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    @apply bg-[#0A2647] h-screen flex flex-col transition-all duration-300 ease-in-out overflow-hidden;
+}
+
+.sidebar.in-active{
+    width:300px;
+}
+
+.sidebar.is-active{
+    width:90px;
+}
+
+/* Sidebar Links */
+
+.sidebar-links{
+    @apply flex-1 overflow-y-auto overflow-x-hidden p-2 flex flex-col gap-1;
+}
+
+/* custom scrollbar */
+
+.wrapper::-webkit-scrollbar{
+    width:6px;
+}
+
+.wrapper::-webkit-scrollbar-thumb{
+    @apply bg-blue-600 rounded-full;
+}
+
+.sidebar-links::-webkit-scrollbar{
+    width:6px;
+}
+
+.sidebar-links::-webkit-scrollbar-thumb{
+    @apply bg-blue-600 rounded-full;
+}
+
+.sidebar-links > a,
+.sidebar-btn{
+    @apply flex items-center gap-2 w-full rounded-md px-3 py-2 text-[13px] text-white transition-all duration-300 hover:bg-blue-600;
+}
+
+.sidebar-links svg{
+    width:16px;
+    min-width:16px;
+}
+
+.sidebar-links .active{
+    @apply bg-blue-600;
+}
+
+/* Text animation */
+
+.menu-text{
+    @apply whitespace-nowrap transition-all duration-300;
+}
+
+.menu-text.hide{
+    @apply opacity-0 w-0 overflow-hidden;
+}
+
+.menu-text.show{
+    @apply opacity-100;
+}
+
+/* Upload submenu */
+
+.submenu{
+    @apply overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+.submenu.closed{
+    max-height:0;
+    opacity:0;
+}
+
+.submenu.open{
+    max-height:200px;
+    opacity:1;
+}
+
+.submenu a{
+    @apply flex items-center rounded-md text-sm text-gray-200 px-3 py-2 hover:bg-blue-600 transition-colors duration-300;
+}
+
+
+/* pagination styling */
+.pagination{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    list-style:none;
+    padding  :0;
+    margin:20px 0;
+}
+
+.page-item{
+    display:flex;
+}
+
+.page-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-width:28px;
+    height:21px;
+    /* padding:0 14px; */
+    /* border:1px solid #d1d5db;
+    border-radius:6px; */
+    background:#fff;
+    color:#374151;
+    text-decoration:none;
+    font-size:12px;
+    cursor:pointer;
+    transition:all .25s ease;
+}
+
+.page-link:hover{
+    background:#f3f4f6;
+    border-color:#2563eb;
+}
+
+.active .page-link{
+    background: #2563eb;
+    border-color: #2563eb;
+    color:#fff;
+}
+
+.disabled .page-link{
+    opacity:.5;
+    cursor:not-allowed;
+    pointer-events:none;
+}
+
+.previous .page-link,
+.next .page-link{
+    font-weight:500;
+}
+
+/* RESULTS PAGE */
+.results-selects
+{
+    @apply border-b-1 border-gray-200 text-gray-500;
+
+    label{
+        @apply text-sm py-3 px-4  inline-block hover:cursor-pointer
+    }
+    input{
+        @apply hidden;
+
+        &:checked + label{
+            @apply text-blue-400 border-b-3 border-blue-400
+        }
+    }
+}
+
+/* UPLOADS PAGES */
+.cancel{
+    button{
+        @apply bg-gray-300 rounded text-black shadow text-center border-none outline-none
+    }
+}
+
+.submit{
+    button{
+        @apply bg-blue-600 rounded text-white shadow text-center border-none outline-none
+    }
+}
