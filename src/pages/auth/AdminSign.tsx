@@ -5,64 +5,8 @@ import eye from "../../assets/eye.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 function AdminSign() {
-  const navigate = useNavigate();
 
   const [visible, setVisible] = useState(false);
-
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setLoading(true);
-    setError("");
-
-    try {
-      const response = await fetch("https://api.academicpavilion.com/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Login failed");
-      }
-
-      console.log(data);
-
-      // Save token if returned
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
-
-      // Redirect
-      navigate("/super/dashboard");
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="sign-uni">
@@ -76,14 +20,12 @@ function AdminSign() {
         <div className="sign-uni-item">
           <h4>Admin Login</h4>
 
-          <form onSubmit={handleSubmit}>
+          <form >
             <div className="form-control">
               <label>Email</label>
               <input
                 type="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -101,8 +43,6 @@ function AdminSign() {
               <input
                 type={visible ? "text" : "password"}
                 name="password"
-                value={formData.password}
-                onChange={handleChange}
                 required
               />
 
@@ -115,12 +55,8 @@ function AdminSign() {
               </div>
             </div>
 
-            {error && (
-              <p style={{ color: "red", marginBottom: "10px" }}>{error}</p>
-            )}
-
-            <button type="submit" disabled={loading}>
-              {loading ? "Signing in..." : "Sign In"}
+            <button type="submit">
+              Sign in
             </button>
           </form>
         </div>
