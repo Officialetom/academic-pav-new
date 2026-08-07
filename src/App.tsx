@@ -13,6 +13,7 @@ import Otp from "./pages/auth/otp";
 import ResetPass from "./pages/auth/ResetPass";
 import ScrollTop from "./components/ScrollTop";
 import NotFound from "./pages/auth/NotFound";
+import AdminSign from "./pages/auth/AdminSign";
 // STUDENT
 import Dashboard from "./pages/student/dashboard";
 import News from "./pages/student/News";
@@ -54,6 +55,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/auth" element={<SignIn />} />
+        <Route path="/auth/admin" element={<AdminSign />} />
         <Route path="/auth/university" element={<UniSign />} />
         <Route path="/auth/student" element={<StudSign />} />
         <Route path="/auth/guest" element={<GuestSign />} />

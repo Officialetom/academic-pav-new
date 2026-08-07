@@ -80,7 +80,10 @@ function StudSign() {
                 name="uni-password"
                 id="uni-password"
               />
-              <Link to="/forgot">forgot password?</Link>
+              <div className="flex justify-between" style={{marginTop: "10px"}}>
+                <Link to="/auth">Back</Link>
+                <Link to="/forgot">forgot password?</Link>
+              </div>
             </div>
             <button type="submit">sign in</button>
           </form>

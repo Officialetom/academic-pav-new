@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 
 function ForgotPage() {
@@ -18,6 +19,9 @@ function ForgotPage() {
             </div>
             <button type="submit">send</button>
           </form>
+          <div className="text-sm">
+            <Link to="/auth">Back</Link>
+          </div>
         </div>
       </div>
     </div>
