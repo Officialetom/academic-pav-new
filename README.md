@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# Preliminary Pages — Academic PAV University
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the **Preliminary Pages** of the Academic PAV University web application. It provides the public-facing interface through which visitors can explore the platform and access relevant information before entering their respective dashboards.
 
-Currently, two official plugins are available:
+The application is built with React, TypeScript, and Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+Before setting up the project, install the following:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Node.js** — preferably a compatible LTS version.
+- **npm** — included with Node.js.
+- **Git** — for cloning the repository.
+- **Visual Studio Code** — recommended for development.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Verify your installations:
+
+```bash
+node -v
+npm -v
+git --version
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone the Repository
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Open your terminal or Git Bash and run:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/YOUR-PRELIMINARY-REPOSITORY.git
 ```
+
+Replace the example URL with the actual GitHub repository URL.
+
+### 2. Navigate into the Project
+
+```bash
+cd YOUR-PRELIMINARY-REPOSITORY
+```
+
+### 3. Install Dependencies
+
+Install the project's required packages:
+
+```bash
+npm install
+```
+
+Alternatively, if `package-lock.json` is included, use the following for a clean installation based on the committed lockfile:
+
+```bash
+npm ci
+```
+
+### 4. Run the Application
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Vite will display a local development URL, typically:
+
+```text
+http://localhost:5173
+```
+
+Open the displayed URL in your browser to view the Preliminary Pages.
+
+## Available Commands
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Starts the development server. |
+| `npm run build` | Creates an optimized production build. |
+| `npm run preview` | Previews the production build locally. |
+| `npm run lint` | Runs ESLint checks, if configured. |
+
+## Technology Stack
+
+- React
+- TypeScript
+- Vite
+- React Router, if configured
+- Tailwind CSS, if configured
+- Font Awesome, if configured
